@@ -11,11 +11,33 @@
     */
 
     //Entrada
+    let dados = {
+        nome: prompt('Informe seu nome (mais de 3 caracteres):'),
+        idade: prompt('Informe sua idade (0 à 150 anos):'),
+        salario: prompt('Informe seu salário (maior que 0):'),
+        sexo: prompt('Informe seu sexo(f ou m)'),
+        estC: prompt('Informe seu estado civil(s, c, v ou d)')
+    }
 
 
     //Processamento
-
+    while(dados.nome.length < 3) {
+        dados.nome = prompt('Informe seu nome (mais de 3 caracteres):')
+    }
+    while(dados.idade < 0 || dados.idade > 150) {
+        dados.idade = prompt('Informe sua idade (0 à 150 anos):')
+    }
+    while (dados.salario < 0) {
+        dados.salario = prompt('Informe seu salário (maior que 0):')
+    }
+    while (dados.sexo != 'f' && dados.sexo != 'm') {
+        dados.sexo = prompt('Informe seu sexo(f ou m)')
+    }
+    while (dados.estC != 's' && dados.estC != 'c' && dados.estC != 'v' && dados.estC != 'd' ) {
+        dados.estC = prompt('Informe seu estado civil(s, c, v ou d)')
+    }
 
     //Saída
+    document.write(`Dados: ${dados}`)
 
 </script>

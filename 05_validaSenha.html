@@ -6,11 +6,20 @@
     */
 
     //Entrada
+    let senha = Number(prompt('Informe sua nova senha(apenas números inteiros):'))
+    let msg = ''
 
 
     //Processamento
+    while (senha % 1 !== 0) {
+        msg = 'Senha Incorreta!'
+        alert(msg)
+        senha = Number(prompt(' Informe sua nova senha(apenas números inteiros):'))
+    }
 
 
     //Saída
+    msg = 'Senha correta!'
+    alert(msg)
 
 </script>

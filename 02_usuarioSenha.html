@@ -6,11 +6,14 @@
     */
 
     //Entrada
-
+    let nome = prompt('Informe um nome de usuário para sua conta:')
+    let senha = prompt('Informe sua senha para a criação de sua conta:')
 
     //Processamento
-
+    while (senha == nome) {
+        senha = prompt('Sua senha não pode ser a mesma que seu nome. Informe outra senha:')
+    }
 
     //Saída
-
+    document.write(`Usuário: ${nome} <br> Senha: ${senha}`)
 </script>

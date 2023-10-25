@@ -6,11 +6,18 @@
     */
 
     //Entrada
-
+    let pA = 80000
+    let pB = 200000
+    let anos = 0
 
     //Processamento
+    while (pA < pB) {
+        pB = (pB * 1.5 / 100) + pB
+        pA = (pA * 3 / 100) + pA
+        anos++
+    }
 
 
     //Saída
-
+document.write(anos)
 </script>
