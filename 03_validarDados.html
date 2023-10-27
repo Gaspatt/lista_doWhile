@@ -13,18 +13,18 @@
     //Entrada
     let dados = {
         nome: prompt('Informe seu nome (mais de 3 caracteres):'),
-        idade: prompt('Informe sua idade (0 à 150 anos):'),
-        salario: prompt('Informe seu salário (maior que 0):'),
-        sexo: prompt('Informe seu sexo(f ou m)'),
+        idade: Number(prompt('Informe sua idade (0 à 150 anos):')),
+        salario: Number(prompt('Informe seu salário (maior que 0):')),
+        sexo: prompt('Informe seu sexo(f ou m)').toLowerCase(),
         estC: prompt('Informe seu estado civil(s, c, v ou d)')
     }
 
 
     //Processamento
-    while(dados.nome.length < 3) {
+    while (dados.nome.length < 3) {
         dados.nome = prompt('Informe seu nome (mais de 3 caracteres):')
     }
-    while(dados.idade < 0 || dados.idade > 150) {
+    while (dados.idade < 0 || dados.idade > 150) {
         dados.idade = prompt('Informe sua idade (0 à 150 anos):')
     }
     while (dados.salario < 0) {
@@ -33,11 +33,11 @@
     while (dados.sexo != 'f' && dados.sexo != 'm') {
         dados.sexo = prompt('Informe seu sexo(f ou m)')
     }
-    while (dados.estC != 's' && dados.estC != 'c' && dados.estC != 'v' && dados.estC != 'd' ) {
+    while (dados.estC != 's' && dados.estC != 'c' && dados.estC != 'v' && dados.estC != 'd') {
         dados.estC = prompt('Informe seu estado civil(s, c, v ou d)')
     }
 
     //Saída
-    document.write(`Dados: ${dados}`)
+    document.write(`Dados: <br> Nome: ${dados.nome} <br> Idade: ${dados.idade} <br> Salario: ${dados.salario} <br> Sexo: ${dados.sexo} <br> Estado civil: ${dados.estC}`)
 
 </script>
