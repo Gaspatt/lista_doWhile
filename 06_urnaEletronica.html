@@ -18,15 +18,38 @@
     c) A porcentagem de votos brancos;
     d) O candidato vencedor.
     */
+    let votos = [0, 0, 0, 0];
+    let totalVotos = 0;
+    let porcentagemNulos = 0;
+    let porcentagemBrancos = 0;
+    let contador = Number(prompt('Quantos votadores serão?'))
+    let i = 0
+    let opcao;
 
-    //Entrada
-    let 
+    while (i < contador) {
+        i++
+        do {
+            opcao = parseInt(prompt("As opções são:\n1. Candidato Joãozinho\n2. Candidato Mariazinha\n3. Nulo\n4. Branco\nEntre com o seu voto:", "0"))
+        } while (opcao < 0 || opcao > 4)
 
-    //Processamento
+        if (opcao === 0 || i == contador) {
+            for (const [index, voto] of votos.entries()) {
+    alert(`Candidato ${index + 1}: ${voto} votos`);
+}
+            alert(`Porcentagem de votos nulos: ${porcentagemNulos}%`);
+            alert(`Porcentagem de votos brancos: ${porcentagemBrancos}%`);
+            alert(`Candidato vencedor: Candidato ${votos.indexOf(Math.max(...votos)) + 1}`);
+        } else {
+            votos[opcao - 1]++;
+            totalVotos++;
 
-
-    //Saída
+            if (opcao === 3) {
+                porcentagemNulos = ((votos[2] / totalVotos) * 100).toFixed(2);
+            } else if (opcao === 4) {
+                porcentagemBrancos = ((votos[3] / totalVotos) * 100).toFixed(2);
+            }
+        }
+    }
+    
 
 </script>
-
-

@@ -11,28 +11,59 @@
 
     Finalize a entrada de dados ao ser digitada uma idade negativa.
     */
+    let quantidadeDePessoas = 0;
+let maiorIdade = 0;
+let menorIdade = Infinity;
+let mediaSalarios = 0;
+let quantidadeDeMulheres = 0;
+let idadePessoaMenorSalario = Infinity;
+let sexoPessoaMenorSalario = '';
+let menorSalario = Infinity;
 
-    let Joao = {
-        idade: Number(prompt('Informe a idade do João:')),
-        sexo: prompt('Informe o sexo do João:'),
-        salario: Number(prompt('Informe o salario do João:'))
-    }
-    let Lobao = {
-        idade: Number(prompt('Informe a idade do Lobão:')),
-        sexo: prompt('Informe o sexo do Lobão:'),
-        salario: Number(prompt('Informe o salario do Lobão:'))
-    }
-    let Tigresa = {
-        idade: Number(prompt('Informe a idade da Tigresa:')),
-        sexo: prompt('Informe o sexo da Tigresa:'),
-        salario: Number(prompt('Informe o salario da Tigresa:'))
-    }
-    let Leoa = {
-        idade: Number(prompt('Informe a idade da Leoa:')),
-        sexo: prompt('Informe o sexo da Leoa:'),
-        salario: Number(prompt('Informe o salario da Leoa:'))
+while (true) {
+    let idade = parseInt(prompt("Digite a idade da pessoa (-1 para sair):"));
+    if (idade < 0) break;
+
+    let sexo = prompt("Digite o sexo da pessoa (M/F):").toUpperCase();
+    if (sexo != 'M' && sexo != 'F') {
+        alert("Sexo inválido!");
+        continue;
     }
 
+    let salario = parseFloat(prompt("Digite o salário da pessoa:"));
+    quantidadeDePessoas++;
+    mediaSalarios += salario;
+
+    if (sexo == 'F') {
+        quantidadeDeMulheres++;
+    }
+
+    if (idade > maiorIdade) {
+        maiorIdade = idade;
+    }
+
+    if (idade < menorIdade) {
+        menorIdade = idade;
+    }
+
+    if (salario < menorSalario) {
+        menorSalario = salario;
+        idadePessoaMenorSalario = idade;
+        sexoPessoaMenorSalario = sexo;
+    }
+    
+}
+
+if (quantidadeDePessoas > 0) {
+    mediaSalarios /= quantidadeDePessoas;
+
+    alert(`A média dos salários do grupo é:${ mediaSalarios}`);
+    alert(`A maior e a menor idade do grupo são, respectivamente:${maiorIdade}, ${menorIdade}`);
+    alert(`A quantidade de mulheres na região é ${ quantidadeDeMulheres}`);
+    alert(`A idade e o sexo da pessoa que possui o menor salário são, respectivamente: ${idadePessoaMenorSalario}, ${sexoPessoaMenorSalario}`);
+} else {
+    alert("Nenhum dado foi inserido.");
+}
     
 
 </script>
